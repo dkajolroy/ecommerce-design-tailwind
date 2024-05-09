@@ -6,70 +6,50 @@
     <title>Product details</title>
     <!-- Style links -->
     <link rel="stylesheet" href="./css/style.css" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  />
   </head>
   <body>
-    
-     
+   
+  </div>
       <main class="max-w-7xl mx-auto sm:pt-16 sm:px-6 lg:px-8">
         <div class="max-w-2xl mx-auto lg:max-w-none">
           <!-- Product -->
           <div class="lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-start">
             <!-- Image gallery -->
-            <div class="flex flex-col-reverse">
-              <!-- Image selector -->
-              <div
-                class="hidden mt-6 w-full max-w-2xl mx-auto sm:block lg:max-w-none"
-              >
-                <div
-                  class="grid grid-cols-4 gap-6"
-                  aria-orientation="horizontal"
-                  role="tablist"
-                >
-                  <button
-                    id="tabs-2-tab-1"
-                    class="relative h-24 bg-white rounded-md flex items-center justify-center text-sm font-medium uppercase text-gray-900 cursor-pointer hover:bg-gray-50 focus:outline-none focus:ring focus:ring-offset-4 focus:ring-opacity-50"
-                    aria-controls="tabs-2-panel-1"
-                    role="tab"
-                    type="button"
-                  >
-                    <span class="sr-only"> Angled view </span>
-                    <span class="absolute inset-0 rounded-md overflow-hidden">
-                      <img
-                        src="https://tailwindui.com/img/ecommerce-images/product-page-03-product-01.jpg"
-                        alt=""
-                        class="w-full h-full object-center object-cover"
-                      />
-                    </span>
-                    <!-- Selected: "ring-indigo-500", Not Selected: "ring-transparent" -->
-                    <span
-                      class="ring-transparent absolute inset-0 rounded-md ring-2 ring-offset-2 pointer-events-none"
-                      aria-hidden="true"
-                    ></span>
-                  </button>
-
-                  <!-- More images... -->
+            <div class="col-12 col-lg-6" id="productGallery">
+                
+                <div class="swiffy-slider slider-item-ratio slider-item-ratio-1x1 slider-nav-round slider-nav-nodelay" id="pgallery">
+                    <ul class="slider-container">
+                        <li><img src="https://swiffyslider.com/assets/img/shoes/shoe4.webp" loading="lazy" alt="..." data-bs-toggle="modal" data-bs-target="#productGalleryModal" onclick="imageClick(0)"></li>
+                        <li><img src="https://swiffyslider.com/assets/img/shoes/shoe6.webp" loading="lazy" alt="..." data-bs-toggle="modal" data-bs-target="#productGalleryModal" onclick="imageClick(1)"></li>
+                        <li><img src="https://swiffyslider.com/assets/img/shoes/shoe2.webp" loading="lazy" alt="..." data-bs-toggle="modal" data-bs-target="#productGalleryModal" onclick="imageClick(2)"></li>
+                        <li><img src="https://swiffyslider.com/assets/img/shoes/shoe1.webp" loading="lazy" alt="..." data-bs-toggle="modal" data-bs-target="#productGalleryModal" onclick="imageClick(4)"></li>
+                        <li><img src="https://swiffyslider.com/assets/img/shoes/shoe3.webp" loading="lazy" alt="..." data-bs-toggle="modal" data-bs-target="#productGalleryModal" onclick="imageClick(5)"></li>
+                    </ul>
+            
+                    <button type="button" class="slider-nav" aria-label="Go previous"></button>
+                    <button type="button" class="slider-nav slider-nav-next" aria-label="Go next"></button>
                 </div>
-              </div>
-
-              <div class="w-full aspect-w-1 aspect-h-1">
-                <!-- Tab panel, show/hide based on tab state. -->
-                <div
-                  id="tabs-2-panel-1"
-                  aria-labelledby="tabs-2-tab-1"
-                  role="tabpanel"
-                  tabindex="0"
-                >
-                  <img
-                    src="https://tailwindui.com/img/ecommerce-images/product-page-03-product-01.jpg"
-                    alt="Angled front view with bag zipped and handles upright."
-                    class="w-full h-full object-center object-cover sm:rounded-lg"
-                  />
+            
+                <div class="swiffy-slider slider-nav-dark slider-nav-sm slider-nav-chevron slider-item-show4 slider-item-snapstart slider-item-ratio slider-item-ratio-1x1 slider-nav-visible slider-nav-page slider-nav-outside-expand pt-3 d-none d-lg-block">
+                    <ul class="slider-container" id="pgallerythumbs" style="cursor:pointer">
+                        <li><img src="https://swiffyslider.com/assets/img/shoes/shoe4.webp" loading="lazy" alt="..." onmouseover="thumbHover(0)"></li>
+                        <li><img src="https://swiffyslider.com/assets/img/shoes/shoe6.webp" loading="lazy" alt="..." onmouseover="thumbHover(1)"></li>
+                        <li><img src="https://swiffyslider.com/assets/img/shoes/shoe2.webp" loading="lazy" alt="..." onmouseover="thumbHover(2)"></li>
+                        <li><img src="https://swiffyslider.com/assets/img/shoes/shoe3.webp" loading="lazy" alt="..." onmouseover="thumbHover(5)"></li>
+                        <li><img src="https://swiffyslider.com/assets/img/shoes/shoe3.webp" loading="lazy" alt="..." onmouseover="thumbHover(5)"></li>
+                        <li><img src="https://swiffyslider.com/assets/img/shoes/shoe3.webp" loading="lazy" alt="..." onmouseover="thumbHover(5)"></li>
+                        <li><img src="https://swiffyslider.com/assets/img/shoes/shoe3.webp" loading="lazy" alt="..." onmouseover="thumbHover(5)"></li>
+                    </ul>
+            
+                    <button type="button" class="slider-nav" aria-label="Go previous"></button>
+                    <button type="button" class="slider-nav slider-nav-next" aria-label="Go next"></button>
                 </div>
-
-                <!-- More images... -->
-              </div>
-            </div>
-
+            </div> 
             <!-- Product info -->
             <div class="mt-10 px-4 sm:px-0 sm:mt-16 lg:mt-0">
               <h1 class="text-3xl font-extrabold tracking-tight text-gray-900">
@@ -368,131 +348,154 @@
                 </div>
               </section>
             </div>
-          </div>
-
-          <section
-            aria-labelledby="related-heading"
-            class="mt-10 border-t border-gray-200 py-16 px-4 sm:px-0"
-          >
-            <h2 id="related-heading" class="text-xl font-bold text-gray-900">
-              Customers also bought
-            </h2>
-
-            <div
-              class="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"
-            >
-              <div>
-                <div class="relative">
-                  <div class="relative w-full h-72 rounded-lg overflow-hidden">
-                    <img
-                      src="https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg"
-                      alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
-                      class="w-full h-full object-center object-cover"
-                    />
-                  </div>
-                  <div class="relative mt-4">
-                    <h3 class="text-sm font-medium text-gray-900">
-                      Zip Tote Basket
-                    </h3>
-                    <p class="mt-1 text-sm text-gray-500">White and black</p>
-                  </div>
-                  <div
-                    class="absolute top-0 inset-x-0 h-72 rounded-lg p-4 flex items-end justify-end overflow-hidden"
-                  >
-                    <div
-                      aria-hidden="true"
-                      class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"
-                    ></div>
-                    <p class="relative text-lg font-semibold text-white">
-                      $140
-                    </p>
-                  </div>
-                </div>
-                <div class="mt-6">
-                  <a
-                    href="#"
-                    class="relative flex bg-gray-100 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-200"
-                    >Add to bag<span class="sr-only">, Zip Tote Basket</span></a
-                  >
-                </div>
-              </div>
-              <!-- More products... -->
-              <div>
-                <div class="relative">
-                  <div class="relative w-full h-72 rounded-lg overflow-hidden">
-                    <img
-                      src="https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg"
-                      alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
-                      class="w-full h-full object-center object-cover"
-                    />
-                  </div>
-                  <div class="relative mt-4">
-                    <h3 class="text-sm font-medium text-gray-900">
-                      Zip Tote Basket
-                    </h3>
-                    <p class="mt-1 text-sm text-gray-500">White and black</p>
-                  </div>
-                  <div
-                    class="absolute top-0 inset-x-0 h-72 rounded-lg p-4 flex items-end justify-end overflow-hidden"
-                  >
-                    <div
-                      aria-hidden="true"
-                      class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"
-                    ></div>
-                    <p class="relative text-lg font-semibold text-white">
-                      $140
-                    </p>
-                  </div>
-                </div>
-                <div class="mt-6">
-                  <a
-                    href="#"
-                    class="relative flex bg-gray-100 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-200"
-                    >Add to bag<span class="sr-only">, Zip Tote Basket</span></a
-                  >
-                </div>
-              </div>
-              <!-- More products... -->
-              <div>
-                <div class="relative">
-                  <div class="relative w-full h-72 rounded-lg overflow-hidden">
-                    <img
-                      src="https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg"
-                      alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
-                      class="w-full h-full object-center object-cover"
-                    />
-                  </div>
-                  <div class="relative mt-4">
-                    <h3 class="text-sm font-medium text-gray-900">
-                      Zip Tote Basket
-                    </h3>
-                    <p class="mt-1 text-sm text-gray-500">White and black</p>
-                  </div>
-                  <div
-                    class="absolute top-0 inset-x-0 h-72 rounded-lg p-4 flex items-end justify-end overflow-hidden"
-                  >
-                    <div
-                      aria-hidden="true"
-                      class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"
-                    ></div>
-                    <p class="relative text-lg font-semibold text-white">
-                      $140
-                    </p>
-                  </div>
-                </div>
-                <div class="mt-6">
-                  <a
-                    href="#"
-                    class="relative flex bg-gray-100 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-200"
-                    >Add to bag<span class="sr-only">, Zip Tote Basket</span></a
-                  >
-                </div>
-              </div>
-              <!-- More products... -->
-            </div>
-          </section>
         </div>
+        <section
+        aria-labelledby="related-heading"
+        class="mt-10 border-t border-gray-200 py-16 px-4 sm:px-0"
+      >
+        <h2 id="related-heading" class="text-xl font-bold text-gray-900">
+          Customers also bought
+        </h2>
+
+        <div
+          class="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"
+        >
+          <div>
+            <div class="relative">
+              <div class="relative w-full h-72 rounded-lg overflow-hidden">
+                <img
+                  src="https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg"
+                  alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
+                  class="w-full h-full object-center object-cover"
+                />
+              </div>
+              <div class="relative mt-4">
+                <h3 class="text-sm font-medium text-gray-900">
+                  Zip Tote Basket
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">White and black</p>
+              </div>
+              <div
+                class="absolute top-0 inset-x-0 h-72 rounded-lg p-4 flex items-end justify-end overflow-hidden"
+              >
+                <div
+                  aria-hidden="true"
+                  class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"
+                ></div>
+                <p class="relative text-lg font-semibold text-white">
+                  $140
+                </p>
+              </div>
+            </div>
+            <div class="mt-6">
+              <a
+                href="#"
+                class="relative flex bg-gray-100 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-200"
+                >Add to bag<span class="sr-only">, Zip Tote Basket</span></a
+              >
+            </div>
+          </div>
+          <!-- More products... -->
+          <div>
+            <div class="relative">
+              <div class="relative w-full h-72 rounded-lg overflow-hidden">
+                <img
+                  src="https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg"
+                  alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
+                  class="w-full h-full object-center object-cover"
+                />
+              </div>
+              <div class="relative mt-4">
+                <h3 class="text-sm font-medium text-gray-900">
+                  Zip Tote Basket
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">White and black</p>
+              </div>
+              <div
+                class="absolute top-0 inset-x-0 h-72 rounded-lg p-4 flex items-end justify-end overflow-hidden"
+              >
+                <div
+                  aria-hidden="true"
+                  class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"
+                ></div>
+                <p class="relative text-lg font-semibold text-white">
+                  $140
+                </p>
+              </div>
+            </div>
+            <div class="mt-6">
+              <a
+                href="#"
+                class="relative flex bg-gray-100 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-200"
+                >Add to bag<span class="sr-only">, Zip Tote Basket</span></a
+              >
+            </div>
+          </div>
+          <!-- More products... -->
+          <div>
+            <div class="relative">
+              <div class="relative w-full h-72 rounded-lg overflow-hidden">
+                <img
+                  src="https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg"
+                  alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
+                  class="w-full h-full object-center object-cover"
+                />
+              </div>
+              <div class="relative mt-4">
+                <h3 class="text-sm font-medium text-gray-900">
+                  Zip Tote Basket
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">White and black</p>
+              </div>
+              <div
+                class="absolute top-0 inset-x-0 h-72 rounded-lg p-4 flex items-end justify-end overflow-hidden"
+              >
+                <div
+                  aria-hidden="true"
+                  class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"
+                ></div>
+                <p class="relative text-lg font-semibold text-white">
+                  $140
+                </p>
+              </div>
+            </div>
+            <div class="mt-6">
+              <a
+                href="#"
+                class="relative flex bg-gray-100 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-200"
+                >Add to bag<span class="sr-only">, Zip Tote Basket</span></a
+              >
+            </div>
+          </div>
+          <!-- More products... -->
+        </div>
+        </section>
       </main>
     </div>
+       <!-- Script links -->
+       <script
+       src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js"
+       crossorigin="anonymous"
+       defer
+     ></script>
+     <script>
+      function imageClick(imageNumber) {
+          setTimeout(() => {
+              //Find the slider element
+              const sliderElement = document.getElementById('pgalleryModal');
+              //Slide to he right image
+              swiffyslider.slideTo(sliderElement, imageNumber);
+              //Listen to slide end and set focus to the container to enable keyboard navigation
+              swiffyslider.onSlideEnd(sliderElement, () => sliderElement.querySelector(".slider-container").focus());
+          }, 300)
+      }
+
+      function thumbHover(imageNumber) {
+          //Find the slider element
+          const sliderElement = document.getElementById('pgallery');
+          //Slide to he right image
+          swiffyslider.slideTo(sliderElement, imageNumber)
+      }
+  </script>
   </body>
 </html>
